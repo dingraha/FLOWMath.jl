@@ -26,7 +26,7 @@ goes to infinity the maximum function is returned. Is mathematically guaranteed 
 overestimate the maximum function, i.e. `maximum(x) <= ksmax(x, hardness)`.
 """
 function ksmax(x, hardness=50)
-    k = maximum(x)
+    k = maximum(real(x))
     return 1.0/hardness*log(sum(exp.(hardness*(x.-k)))) .+ k
 end
 
